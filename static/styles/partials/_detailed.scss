@@ -1,0 +1,60 @@
+.project-wrapper {
+  @include article(3);
+}
+
+.project-details {
+  margin: 6vh auto 0 auto;
+  max-width: $max-width;
+  overflow-x: hidden;
+  width: 80%;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 980px){
+  .project-details {
+    max-width: none;
+    width: 100%;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+.content {
+  margin-top: $margin-top;
+  margin-bottom: $margin-top;
+
+  img {
+    position: relative;
+  }
+}
+
+.overview,
+.description {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.overview {
+  width: 35%;
+  vertical-align: top;
+}
+
+.description {
+  width: 60%;
+}
+
+@media screen and (max-width: 500px) {
+  .overview {
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .description {
+    width: 100%;
+  }
+}

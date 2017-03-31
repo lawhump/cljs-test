@@ -1,0 +1,15 @@
+.bio-wrapper {
+  @include article(3);
+
+}
+
+.bio {
+  margin: 6vh auto 0 auto;
+  max-width: $max-width;
+  overflow-x: hidden;
+  width: 80%;
+
+  div {
+    margin-top: 3rem;
+  }
+}

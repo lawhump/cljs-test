@@ -1,0 +1,41 @@
+@mixin font-face-SF($name, $weight) {
+  @font-face {
+    font-family: "SF";
+    font-weight: $weight;
+    src: url("../fonts/SF/#{$name}/SanFranciscoText-#{$name}.eot") format("eot"),
+         url("../fonts/SF/#{$name}/SanFranciscoText-#{$name}.woff2") format("woff2"),
+         url("../fonts/SF/#{$name}/SanFranciscoText-#{$name}.woff") format("woff"),
+         url("../fonts/SF/#{$name}/SanFranciscoText-#{$name}.ttf") format("truetype"),
+         url("../fonts/SF/#{$name}/SanFranciscoText-#{$name}.svg") format("svg");
+  }
+}
+
+@mixin article($level){
+  @if $level == 1 {
+    z-index: 1;
+  }
+
+  @else if $level == 2 {
+    opacity: 0;
+    z-index: -10;
+
+    &.active {
+      opacity: 1;
+      transition: opacity .5s cubic-bezier(0.465, 0.183, 0.153, 0.946) .4s,
+                  z-index .5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+      z-index: 10;
+    }
+  }
+
+  @else {
+    opacity: 1;
+    z-index: -100;
+
+    &.active {
+      opacity: 1;
+      transition: opacity .5s cubic-bezier(0.465, 0.183, 0.153, 0.946) .4s,
+                  z-index .5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+      z-index: 100;
+    }
+  }
+}
